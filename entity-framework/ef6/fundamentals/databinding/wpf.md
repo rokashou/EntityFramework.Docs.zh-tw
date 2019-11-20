@@ -52,7 +52,7 @@ DbContext API 介面時您應該使用**物件**選項建立新的資料來源�
 
 ## <a name="define-a-model"></a>定義模型
 
-在本逐步解說，您可以選擇實作模型，使用程式碼優先 」 或 「 EF 設計工具。 完成其中兩個下列各節。
+在本逐步解說，您可以選擇實作模型，使用 **Code First(程式碼優先)** 或 **EF 設計工具**。 完成其中兩個下列各節。
 
 ### <a name="option-1-define-a-model-using-code-first"></a>選項 1： 定義使用 Code First 模型
 
@@ -63,8 +63,8 @@ DbContext API 介面時您應該使用**物件**選項建立新的資料來源�
 -   將新類別加入**WPFwithEFSample:**
     -   以滑鼠右鍵按一下專案名稱
     -   選取 **新增**，然後**新項目**
-    -   選取 **類別**，然後輸入**產品**的類別名稱
--   取代**產品**類別定義為下列程式碼：
+    -   選取 **類別**，然後輸入**Product**作為類別名稱
+-   取代**Product**類別定義為下列程式碼：
 
 ``` csharp
     namespace WPFwithEFSample
@@ -78,9 +78,9 @@ DbContext API 介面時您應該使用**物件**選項建立新的資料來源�
             public virtual Category Category { get; set; }
         }
     }
-
--   Add a **Category** class with the following definition:
-
+```
+-  　新增 **Category** 類別，定義為下列程式碼：
+```CSharp
     using System.Collections.ObjectModel;
 
     namespace WPFwithEFSample
@@ -100,7 +100,7 @@ DbContext API 介面時您應該使用**物件**選項建立新的資料來源�
     }
 ```
 
-**產品**屬性上的**類別目錄**類別並**類別**屬性**產品**類別為導覽屬性。 在 Entity Framework 中，導覽屬性會提供瀏覽兩個實體類型之間的關聯性的方法。
+**Category**類別裡的**Product**屬性與**Product**類別裡的**Category**屬性為導覽屬性。 在 Entity Framework 中，導覽屬性會提供瀏覽兩個實體類型之間的關聯性的方法。
 
 除了定義實體，您需要定義類別，衍生自 DbContext，並公開 DbSet&lt;TEntity&gt;屬性。 DbSet&lt;TEntity&gt;屬性可讓知道您想要在模型中包含哪些的類型的內容。
 
